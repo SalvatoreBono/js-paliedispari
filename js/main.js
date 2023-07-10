@@ -47,7 +47,10 @@ btnGenerator.addEventListener("click", function () {
 
     //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
     oddEvenSum(sum)
-
+    if (userNumber > 5) {
+        alert("Inserisci un numero minore o uguale a 5")
+        location.reload();
+    }
     //Dichiariamo chi ha vinto.
     if (chooseOddEven == 1 && sum % 2 == 0) {
         console.log("Hai Vinto")
@@ -68,10 +71,35 @@ const inputWord = document.getElementById("input-word");
 const inputBtnGeneratorWord = document.getElementById("btn-word")
 
 //Creare una funzione per capire se la parola inserita è palindroma */
-function checkPalindrom(palindrom) {
+function checkPalindrom(word) {
+    //la parola che digitiamo al click del btn va in queste 2 array
+    //            0123
+    const array1 = [];
+    const array2 = [];
+
+    //"let i = word.length - 1;" = Siccome la array parte da 0  devo mettere -1 per mettere in parità le lenght con le array così che venga rilevata la lettera in posizione "ultima della array"
+    // i >= 0; = devo specificare ">=" così che venga rilevato anche il numero 0
+    //finchè "i" è ">= 0; decrementa fino al risultato voluto"
+    //legge l'array da destra verso sinistra
+    for (let i = word.length - 1; i >= 0; i--) {
+        array2.push(word[i]);
+    }
+    //i=0 deve arrivare allo stesso numero della variabile word.length, e il ciclo si incrementerà finchè "i" sarà uguale a word.length
+    //finche "i" è minore di word.length incrementà
+    //legge l'array da sinistra verso destra
+    for (let i = 0; i < word.length; i++) {
+        array1.push(word[i]);
+        //avviene il confronto delle due array
+        if (array1[i] === array2[i]) {
+            console.log("palindromo")
+        } else {
+            console.log("non palindromo")
+        }
+    }
 
 }
 inputBtnGeneratorWord.addEventListener("click", function () {
     //Chiedere all’utente di inserire una parola
     const word = inputWord.value
+    checkPalindrom(word)
 })
