@@ -58,3 +58,20 @@ btnGenerator.addEventListener("click", function () {
         console.log("Hai Perso")
     }
 })
+
+
+/* Palidroma
+Chiedere all’utente di inserire una parola
+Creare una funzione per capire se la parola inserita è palindroma (una parola che si legge allo stesso modo anche da destra versi sinistra, ad esempio anna, otto) */
+
+const inputWord = document.getElementById("input-word");
+const inputBtnGeneratorWord = document.getElementById("btn-word")
+
+//Creare una funzione per capire se la parola inserita è palindroma */
+function checkPalindrom(palindrom) {
+
+}
+inputBtnGeneratorWord.addEventListener("click", function () {
+    //Chiedere all’utente di inserire una parola
+    const word = inputWord.value
+})
